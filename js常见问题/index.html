@@ -4,12 +4,14 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="一、怪异盒模型
-box-sizing：border-box；
+  <meta name="description" content="一、数组去重
 
-主轴方向居中：justify-content：center
-改变主轴对齐方式：flex-direction：column
-两端对齐中间自动分配: justify-content: space-between；默认左对齐：flex-sta" />
+let array = Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));二、for in 和 for of 的区别
+
+
+for…in 循环：只能获得对象的键名，不能获得键值，for…of 循环：允许遍历获得键值
+
+三、let var const " />
   
 
   
@@ -20,15 +22,15 @@ box-sizing：border-box；
   
   <title>js常见问题 | 宇情</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、怪异盒模型 box-sizing：border-box；  主轴方向居中：justify-content：center 改变主轴对齐方式：flex-direction：column 两端对齐中间自动分配: justify-content: space-between；默认左对齐：flex-start 侧轴垂直居中对齐：align-items: center；底对齐：flex-end 项目单行：">
+  <meta name="description" content="一、数组去重  let array &#x3D; Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));二、for in 和 for of 的区别   for…in 循环：只能获得对象的键名，不能获得键值，for…of 循环：允许遍历获得键值  三、let var const 的区别  let 块级作用域；不存在变量提升（有暂时性死区）；不可重复定义；声明的变量不会作为 wi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js常见问题">
 <meta property="og:url" content="http://yoursite.com/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="宇情">
-<meta property="og:description" content="一、怪异盒模型 box-sizing：border-box；  主轴方向居中：justify-content：center 改变主轴对齐方式：flex-direction：column 两端对齐中间自动分配: justify-content: space-between；默认左对齐：flex-start 侧轴垂直居中对齐：align-items: center；底对齐：flex-end 项目单行：">
+<meta property="og:description" content="一、数组去重  let array &#x3D; Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));二、for in 和 for of 的区别   for…in 循环：只能获得对象的键名，不能获得键值，for…of 循环：允许遍历获得键值  三、let var const 的区别  let 块级作用域；不存在变量提升（有暂时性死区）；不可重复定义；声明的变量不会作为 wi">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-13T12:16:09.000Z">
-<meta property="article:modified_time" content="2020-03-17T09:17:10.640Z">
+<meta property="article:modified_time" content="2020-03-17T13:46:56.955Z">
 <meta property="article:author" content="刘晴">
 <meta name="twitter:card" content="summary">
   
@@ -88,66 +90,31 @@ box-sizing：border-box；
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ck7voor9a0001pktl9w2hai5g" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ck7vyb2lp0004lwtl2bgj9oxg" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h3 id="一、怪异盒模型"><a href="#一、怪异盒模型" class="headerlink" title="一、怪异盒模型"></a>一、怪异盒模型</h3><blockquote>
-<p>box-sizing：border-box；</p>
-<ul>
-<li>主轴方向居中：justify-content：center</li>
-<li>改变主轴对齐方式：flex-direction：column</li>
-<li>两端对齐中间自动分配: justify-content: space-between；默认左对齐：flex-start</li>
-<li>侧轴垂直居中对齐：align-items: center；底对齐：flex-end</li>
-<li>项目单行：flex-wrap：nowrap</li>
-<li>多行间的居中对齐：align-content：center</li>
-</ul>
-</blockquote>
+        <p><font color=#f3f size=5>一、数组去重</font></p>
 <blockquote>
-<ul>
-<li><font color=#f3f size=3>js</font><blockquote>
+<h3 id="let-array-Array-from-new-Set-1-1-1-2-3-2-4"><a href="#let-array-Array-from-new-Set-1-1-1-2-3-2-4" class="headerlink" title="let array = Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));"></a>let array = Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));</h3><p><font color=#f3f size=5>二、for in 和 for of 的区别</font></p>
+</blockquote>
 <ol>
-<li>数组去重<blockquote>
-<p>let array = Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));</p>
-</blockquote>
-</li>
-<li>for in 和 for of 的区别<blockquote>
-<p>1.for…in 循环：只能获得对象的键名，不能获得键值，for…of 循环：允许遍历获得键值</p>
-</blockquote>
-</li>
-<li>let var const<blockquote>
-<ul>
+<li>for…in 循环：只能获得对象的键名，不能获得键值，for…of 循环：允许遍历获得键值</li>
+</ol>
+<p><font color=#f3f size=5>三、let var const 的区别</font></p>
+<ol>
 <li>let 块级作用域；不存在变量提升（有暂时性死区）；不可重复定义；声明的变量不会作为 window 的属性</li>
 <li>var 函数作用域；存在变量提升；可重复定义；声明的变量会作为 window 的属性。</li>
 <li>const 声明一个只读的常量。一旦声明，常量的值就不能改变。</li>
-</ul>
-</blockquote>
-</li>
-<li>通过原型链实现数组内置方法<blockquote>
-<p>Array.prototype<div class="_2Uzcx_"><pre class="line-numbers  language-javascript"><code class="JavaScript  language-javascript"><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> output <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>output<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> output<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> output<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div></p>
-</blockquote>
-</li>
 </ol>
-</blockquote>
-</li>
-<li><font color=#f3f size=3>git</font><blockquote>
-<p>多人协作流程：git pull 拉取至本地，git clone 克隆，git push 加入项目</p>
-</blockquote>
-</li>
-</ul>
-</blockquote>
-<blockquote>
-<ul>
-<li><font color=#f3f size=3>WebSocket</font><blockquote>
-<p>怎么实现数据的实时更新：就是先使用 HTTP 协议建立连接，然后使用底层的 TCP 连接继续通信</p>
-<blockquote>
-<p>Websocket 由来：由于 http 存在一个明显的弊端（消息只能有客户端推送到服务器端，而服务器端不能主动推送到客户端），导致如果服务器如果有连续的变化，这时只能使用轮询，而轮询效率过低，并不适合。于是 WebSocket (是一个持久化的协议，基于 http，服务端可以主动 push) 被发明出来</p>
-</blockquote>
-<blockquote>
-<p>WebSocket 是一种全双工的计算机通信协议，它建立在 TCP 的基础之上。它可以在服务器与浏览器之间建立一个长连接，然后进行实时的数据传输。而我们比较熟悉的 HTTP，它一般也是建立在 TCP 之上的，不同的是，它不是全双工的，而是请求-相应式的，每次通信都需要发起新的请求，而且每次发起请求，都需要重新建立连接。websocket 相比于 http 具有的优点：</p>
+<p><font color=#f3f size=5>四、通过原型链实现数组内置方法</font> Array.prototype<div class="_2Uzcx_"><pre class="line-numbers  language-javascript"><code class="JavaScript  language-javascript"><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> output <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>output<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> output<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> output<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><br><font color=#f3f size=5>五、git</font>多人协作流程：git pull 拉取至本地，git clone 克隆，git push 加入项目</p>
+<p><font color=#f3f size=5>六、WebSocket</font></p>
 <ol>
+<li>怎么实现数据的实时更新：就是先使用 HTTP 协议建立连接，然后使用底层的 TCP 连接继续通信<ul>
+<li>Websocket 由来：由于 http 存在一个明显的弊端（消息只能有客户端推送到服务器端，而服务器端不能主动推送到客户端），导致如果服务器如果有连续的变化，这时只能使用轮询，而轮询效率过低，并不适合。于是 WebSocket (是一个持久化的协议，基于 http，服务端可以主动 push) 被发明出来</li>
+<li>WebSocket 是一种全双工的计算机通信协议，它建立在 TCP 的基础之上。它可以在服务器与浏览器之间建立一个长连接，然后进行实时的数据传输。而我们比较熟悉的 HTTP，它一般也是建立在 TCP 之上的，不同的是，它不是全双工的，而是请求-相应式的，每次通信都需要发起新的请求，而且每次发起请求，都需要重新建立连接。websocket 相比于 http 具有的优点：<ol>
 <li>支持双向通信，实时性更强；</li>
 <li>可以发送文本，也可以二进制文件；</li>
 <li>协议标识符是 ws，加密后是 wss ；</li>
@@ -155,38 +122,86 @@ box-sizing：border-box；
 <li>支持扩展。ws 协议定义了扩展，用户可以扩展协议，或者实现自定义的子协议。（比如支持自定义压缩算法等）</li>
 <li>无跨域问题。</li>
 </ol>
-</blockquote>
-</blockquote>
 </li>
-<li><font color=#f3f size=3>swiper 轮播的原理</font><blockquote>
-<p>Swiper 的每个展示块（屏）为一个 slide，slide 中放置图片或文字等展示的内容，全部 slide 排成一行(或多行)包含在包装器 wrapper /ˈræpə(r)/ 中，而总容器 container 又包裹着 wrapper 和箭头按钮控件 navigation 以及分页器控件 pagination。<br>当手指（或鼠标）触摸滑动 Swiper 时，Swiper 在浏览器每一帧通过计算滑动的距离差对 wrapper 进行位移（transform）从而产生拖动的效果。在手指（或鼠标）释放时，计算下一个 slide 的起始位置对 wrapper 设置位移动画（transition），从而产生切换动画效果。</p>
-</blockquote>
+</ul>
 </li>
-<li><font color=#f3f size=3>一个对象怎么实现深拷贝</font> (浅拷贝只解决了第一层的问题，如果接下去的值中还有对象的话，就需要深拷贝)<blockquote>
-<p>对原始对象属性所引用的对象进行进行递归拷贝 var newObject = $.extend(true, {}, oldObject);<br>可以通过 JSON.parse(JSON.stringify(object))</p>
-<blockquote>
-<p>局限性：</p>
+</ol>
+<p><font color=#f3f size=5>七、swiper 轮播的原理</font></p>
 <ol>
+<li>Swiper 的每个展示块（屏）为一个 slide，slide 中放置图片或文字等展示的内容，全部 slide 排成一行(或多行)包含在包装器 wrapper /ˈræpə(r)/ 中，而总容器 container 又包裹着 wrapper 和箭头按钮控件 navigation 以及分页器控件 pagination。</li>
+<li>当手指（或鼠标）触摸滑动 Swiper 时，Swiper 在浏览器每一帧通过计算滑动的距离差对 wrapper 进行位移（transform）从而产生拖动的效果。在手指（或鼠标）释放时，计算下一个 slide 的起始位置对 wrapper 设置位移动画（transition），从而产生切换动画效果。</li>
+</ol>
+<p><font color=#f3f size=5>八、一个对象怎么实现深拷贝</font> (浅拷贝只解决了第一层的问题，如果接下去的值中还有对象的话，就需要深拷贝)</p>
+<ol>
+<li>对原始对象属性所引用的对象进行进行递归拷贝 var newObject = $.extend(true, {}, oldObject);</li>
+<li>可以通过 JSON.parse(JSON.stringify(object))<ul>
+<li>局限性：<ol>
 <li>会忽略 undefined</li>
 <li>会忽略 symbol</li>
 <li>在遇到函数、 undefined 或者 symbol 的时候，该对象不能正常的序列化</li>
 <li>不能解决循环引用的对象</li>
 </ol>
-</blockquote>
-</blockquote>
-</li>
-<li><font color=#f3f size=3>浅拷贝</font><blockquote>
-<ol>
-<li>直接赋值的方法，其中一方改变，另一方也会相应改变。<strong>_ 如何解决 _</strong>：<blockquote>
-<p>1、Object.assign<div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token keyword">let</span> b <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span><br>a<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">2</span><br>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 1</span> > > > </code></pre></div><br>2、可以通过展开运算符（…）<div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>a<span class="token punctuation">}</span>a<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">2</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 1</span></code></pre></div></p>
-</blockquote>
-</li>
-</ol>
-</blockquote>
 </li>
 </ul>
-</blockquote>
- <!-- js:介绍下 es6 里面的 promise(纠正：他的存在就是为了解决回调地狱)；promise 的链式调用可以一直.then 下去不太好能不能异步转同步(提示：async；await); Taro 是个框架吗可以 .then 吗；几个前端：3 个；技术经理干啥的：主要是前端啥都干点；怎么看待加班的问题；之前上班的状态加班多吗；登录怎么做；怎么确定是我这个用户调用的接口；小程序涉及到的权限问题比如首页扫一扫，打开摄像头；vue 的生命周期； ；对页面的 dom 元素进行修改在 created 里面修改行吗(提示：因为 created 内部的虚拟 dom 还没完成，还没有编译所以此时访问不到 dom)？；展示列表的数组修改第一项的内容(调试工具里已经刷新了)，但是页面没有修改成功怎么办(提示：这是一个数组，vue 官方里面有一个定义方法，vue 不能对数组里面的数据做到实时渲染，给他提供了一些官方的方法，比如\$.set)；双向数据绑定原理？；v-model 的具体使用；说一下常用指令(tip：v-if、v-show)；有没有做过登陆(token 一般放到哪，请求接口带给后台)；js 循环遍历有哪些(tip: foreach、for 循环、map)；给你一个对象，不知道里面有几层怎么做到把数组(还有二维数组或者三维数组)每一项取出来；有用过 js 的递归吗；this 在不同地方指向问题，普通函数的 this 指啥；vue 组件里面的 this 指向？(tip: this.data,this 是谁，实际上就是 vue 组件的实例)；双等和三个等号的区别；从信用来说哪一个更好些；平时自己有没有学习；什么时候离职：年前一月份；平时有没有看技术博客，有没有自己写过； -->
+</li>
+</ol>
+<p><font color=#f3f size=5>九、浅拷贝</font></p>
+<ol>
+<li>直接赋值的方法，其中一方改变，另一方也会相应改变。<strong>_ 如何解决 _</strong>：<ol>
+<li>Object.assign<div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token keyword">let</span> b <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>a<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">2</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 1</span></code></pre></div></li>
+<li>可以通过展开运算符（…）<div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>a<span class="token punctuation">}</span>a<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">2</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 1</span></code></pre></div></li>
+</ol>
+</li>
+</ol>
+<p><font color=#f3f size=5>十、介绍下 es6 里面的 promise</font></p>
+<ol>
+<li><p>Promise 是 ES6 新增的语法，解决了回调地狱的问题</p>
+</li>
+<li><p>可以把 Promise 看成一个状态机。初始是 pending 状态，可以通过函数 resolve 和 reject，将状态转变为 resolved 或者 rejected 状态，状态一旦改变就不能再次变化。</p>
+</li>
+<li><p>then 函数会返回一个 Promise 实例，并且该返回值是一个新的实例而不是之前的实例。因为 Promise 规范规定除了 pending 状态，其他状态是不可以改变的，如果返回的是一个相同实例的话，多个 then 调用就失去意义了。 对于 then 来说，本质上可以把它看成是 flatMap</p>
+</li>
+<li><p>Promise 对象用来进行延迟(deferred) 和异步(asynchronous) 计算</p>
+</li>
+<li><p>构造 promise 的基本用法</p>
+<div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// succeed</span><span class="token function">resolve</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>   <span class="token comment">// fails</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token function">Error</span><span class="token punctuation">(</span>errMessage<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<p></code></pre></div></p>
+</li>
+<li><p>关于 Promise 的链式调用异步转同步</p>
+<ol>
+<li>关于 Promise<ol>
+<li>Promise.then() 用于链式调用</li>
+<li>Promise.catch()：在链式写法中可以捕获 then 中发送的异常</li>
+<li>Promise.all() 多个 Promise 并行进行,当所有 Promise reslove 时 reslove，当有一个 Promise reject 时 reject (获得的成功结果的数组里面的数据顺序与 Promise.all()接收参数的顺序是一致的)</li>
+<li>Promise.race() 在第一个 Promise 对象变为 fulfilled 之后，并不会取消其他 promise 对象的执行。只是只有先完成的 Promise 才会被 Promice.race 后面的 then()处理，其他 promise 还是在执行的，只不过不会进入到 promise.race 后面的 then 里。</li>
+</ol>
+</li>
+<li>关于 async/await<ul>
+<li>这个是 ES7 中的异步解决方案,在 Node v8.0.0 及其以上已经原生支持,在低版本的 Node 中需要开启–harmony-async-await 选项</li>
+</ul>
+<ol>
+<li>async 表示这是一个 async 函数，await 只能用在这个函数里面。</li>
+<li>await 表示在这里等待 Promise 返回结果了，再继续执行。</li>
+<li>await 后面跟着的应该是一个 Promise 对象</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul>
+<li><font color=#f5f size=3>注意：</font><br>我们用 Promise 的时候一般是包在一个函数中，在需要的时候去运行这个函数</li>
+</ul>
+<h3 id="补充：怪异盒模型"><a href="#补充：怪异盒模型" class="headerlink" title="补充：怪异盒模型"></a>补充：怪异盒模型</h3><p>box-sizing：border-box；</p>
+<ul>
+<li>主轴方向居中：justify-content：center</li>
+<li>改变主轴对齐方式：flex-direction：column</li>
+<li>两端对齐中间自动分配: justify-content: space-between；默认左对齐：flex-start</li>
+<li>侧轴垂直居中对齐：align-items: center；底对齐：flex-end</li>
+<li>项目单行：flex-wrap：nowrap</li>
+<li>多行间的居中对齐：align-content：center<!-- Taro 是个框架吗可以 .then 吗；几个前端：3 个；技术经理干啥的：主要是前端啥都干点；怎么看待加班的问题；之前上班的状态加班多吗；登录怎么做；怎么确定是我这个用户调用的接口；小程序涉及到的权限问题比如首页扫一扫，打开摄像头；vue 的生命周期； ；对页面的 dom 元素进行修改在 created 里面修改行吗(提示：因为 created 内部的虚拟 dom 还没完成，还没有编译所以此时访问不到 dom)？；展示列表的数组修改第一项的内容(调试工具里已经刷新了)，但是页面没有修改成功怎么办(提示：这是一个数组，vue 官方里面有一个定义方法，vue 不能对数组里面的数据做到实时渲染，给他提供了一些官方的方法，比如\$.set)；双向数据绑定原理？；v-model 的具体使用；说一下常用指令(tip：v-if、v-show)；有没有做过登陆(token 一般放到哪，请求接口带给后台)；js 循环遍历有哪些(tip: foreach、for 循环、map)；给你一个对象，不知道里面有几层怎么做到把数组(还有二维数组或者三维数组)每一项取出来；有用过 js 的递归吗；this 在不同地方指向问题，普通函数的 this 指啥；vue 组件里面的 this 指向？(tip: this.data,this 是谁，实际上就是 vue 组件的实例)；双等和三个等号的区别；从信用来说哪一个更好些；平时自己有没有学习；什么时候离职：年前一月份；平时有没有看技术博客，有没有自己写过； -->
+</li>
+</ul>
 
       
     </div><!-- .entry-content -->

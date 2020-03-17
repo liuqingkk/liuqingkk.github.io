@@ -24,7 +24,7 @@ ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子�
 <meta property="og:description" content="vue ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子组件中的 data 和去调用子组件中的方法。 ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例;当 v-for 用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-13T13:48:21.000Z">
-<meta property="article:modified_time" content="2020-03-17T09:15:07.459Z">
+<meta property="article:modified_time" content="2020-03-17T13:34:20.492Z">
 <meta property="article:author" content="刘晴">
 <meta name="twitter:card" content="summary">
   
@@ -84,7 +84,7 @@ ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子�
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ck7voor9d0002pktl6i6q1x2u" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ck7vyb2lq0005lwtl4z4m4q4p" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -127,17 +127,13 @@ ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子�
 </blockquote>
 </li>
 <li><p><font color=#f3f size=6>vuex</font></p>
-<blockquote>
 <ol>
 <li>只用来读取的状态集中放在 store 中； 改变状态的方式是提交 mutations，这是个同步的事物； 异步逻辑应该封装在 action 中。</li>
 <li>在 main.js 引入 store，注入。新建了一个目录 store，… export</li>
 <li>场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车</li>
 </ol>
-</blockquote>
 </li>
 <li><p><font color=#f3f size=6> v-if 和 v-show 的区别</font></p>
-<blockquote>
-<blockquote>
 <ol>
 <li>v-if 是动态的向 DOM 树内添加或者删除 DOM 元素；v-show 是通过设置 DOM 元素的 display 样式属性控制显隐；</li>
 <li><font color=#E066E0 size=2>编译过程</font>: v-if 切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件；v-show 只是简单的基于 css 切换；</li>
@@ -145,31 +141,24 @@ ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子�
 <li><font color=#E066E0 size=2>性能消耗</font>：v-if 有更高的切换消耗；v-show 有更高的初始渲染消耗；</li>
 <li><font color=#E066E0 size=2>使用场景</font>：v-if 适合运营条件不大可能改变；v-show 适合频繁切换。</li>
 </ol>
-</blockquote>
 <ul>
-<li><font color=#E066E0 size=2>提示</font>：如果 v-show 作用的元素，css 文件中 display:none，通过 v-show 进行设置不能显示该元素；<blockquote>
-<p>原因：v-show 控制显隐，是通过 js 代码去修改元素的 element style，如果 value 为 false，设置 display: none;如果 value 为 true，设置 display: ‘’；于是 value 为 true 时，只能将 element style 中的 display 效果清除，并不能覆盖 css 中的 display 效果；</p>
-<p>解决方式：使用 v-show 的话，在 vue 解析之前隐藏 DOM 的话，尽量在 style 属性里面设置 display 的值，不要在 css 文件中</p>
-</blockquote>
+<li><font color=#E066E0 size=2>提示</font>：如果 v-show 作用的元素，css 文件中 display:none，通过 v-show 进行设置不能显示该元素；<ul>
+<li>原因：v-show 控制显隐，是通过 js 代码去修改元素的 element style，如果 value 为 false，设置 display: none;如果 value 为 true，设置 display: ‘’；于是 value 为 true 时，只能将 element style 中的 display 效果清除，并不能覆盖 css 中的 display 效果；</li>
+<li>解决方式：使用 v-show 的话，在 vue 解析之前隐藏 DOM 的话，尽量在 style 属性里面设置 display 的值，不要在 css 文件中</li>
+</ul>
 </li>
 </ul>
-</blockquote>
 </li>
 <li><p><font color=#f3f size=6> v-for 加 key 值的原因</font></p>
-<blockquote>
-<blockquote>
-<p>vue 中列表循环需加:key=”唯一标识” key 属性可以避免数据混乱的情况出现， key 的主要作用就是用来提高渲染性能的！</p>
-</blockquote>
 <ul>
-<li><font color=#f3f size=3> vue 中检测不到数据的变化 </font><blockquote>
+<li>vue 中列表循环需加:key=”唯一标识” key 属性可以避免数据混乱的情况出现， key 的主要作用就是用来提高渲染性能的！</li>
+</ul>
+</li>
+<li><p><font color=#f3f size=5> vue 中检测不到数据的变化 </font></p>
 <ol>
 <li>为什么出现这种问题：受 ES5 的限制，Vue.js 不能检测到对象属性的添加或删除。因为 Vue.js 在初始化实例时将属性转为 getter/setter，所以属性必须在 data 对象上才能让 Vue.js 转换它，才能让它是响应的。请参照<a href="https://v1-cn.vuejs.org/guide/reactivity.html" target="_blank" rel="noopener">https://v1-cn.vuejs.org/guide/reactivity.html</a></li>
 <li>解决方式：1、对于普通数据对象，可以使用全局方法，通过 vue 的 this.$set(object, key, value)方法。2、想向已有对象上添加一些属性 可以创建一个新的对象，包含原对象的属性和新的属性：通过 Object.assign()重新创建一个对象, this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })</li>
 </ol>
-</blockquote>
-</li>
-</ul>
-</blockquote>
 </li>
 </ol>
 
