@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="vue
+ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子组件中的 data 和去调用子组件中的方法。 ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>vue常见问题 | 宇情</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="vue ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子组件中的 data 和去调用子组件中的方法。 ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例;当 v-for 用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue常见问题">
+<meta property="og:url" content="http://yoursite.com/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:site_name" content="宇情">
+<meta property="og:description" content="vue ref 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子组件中的 data 和去调用子组件中的方法。 ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例;当 v-for 用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-13T13:48:21.000Z">
+<meta property="article:modified_time" content="2020-03-17T09:15:07.459Z">
+<meta property="article:author" content="刘晴">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="宇情" rel="home">宇情</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">首页</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">目录</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-vue常见问题" class="post-vue常见问题 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      vue常见问题
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ck7voor9d0002pktl6i6q1x2u" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><ol>
+<li><p><font color=#f3f size=6>ref</font> 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子组件中的 data 和去调用子组件中的方法。 ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例;当 v-for 用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。关于 ref 注册时间的重要说明：因为 ref 本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们 - 它们还不存在！, $refs 也不是响应式的，因此你不应该试图用它在模板中做数据绑定。</p>
+</li>
+<li><p><font color=#f3f size=6>publicpath</font> 的配置默认是 “/“，可以直接输入文件名即可访问；确保 publicPath 总是以斜杠(/)开头和结尾。也可以使用一个完整的 URL。这是模块热替换所必需的。 <a href="https://cli.vuejs.org/zh/config/#publicpath" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#publicpath</a></p>
+</li>
+<li><p><font color=#f3f size=6>vue-router</font> Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。&gt; <p>如果在一个模块化工程中使用它，必须要通过 <code>Vue.use()</code> 明确地安装路由功能：</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>, <span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router', </span>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span> </code></pre></div></p>
+<blockquote>
+<p>1、 vue-router 包含的功能有：</p>
+<ol>
+<li>嵌套的路由/视图表</li>
+<li>模块化的、基于组件的路由配置</li>
+<li>路由参数、查询、通配符</li>
+<li>基于 Vue.js 过渡系统的视图过渡效果</li>
+<li>细粒度的导航控制</li>
+<li>带有自动激活的 CSS class 的链接</li>
+<li>HTML5 历史模式或 hash 模式，在 IE9 中自动降级</li>
+<li>自定义的滚动条行为</li>
+</ol>
+<p>2、 vue-router 分为几个模块：</p>
+<ol>
+<li>默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。</li>
+<li>如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。<pre class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span><br>mode<span class="token punctuation">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span><br>routes<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre></li>
+<li>‘abstract’模式，不涉及和浏览器地址的相关记录，流程跟’HashHistory’是一样的，其原理是通过数组模拟浏览器历史记录栈的功能</li>
+</ol>
+<ul>
+<li><font color=#f3f size=3>组件之间的传参</font><blockquote>
+<ol>
+<li>父组件传给子组件：子组件通过 props 方法接受数据；</li>
+<li>子组件传给父组件： $emit 方法传递参数</li>
+<li>非父子组件间的数据传递，兄弟组件传值：eventBus，就是创建一个事件中心，相当于中转站，可以用它来传递事件和接收事件。项目比较小时，用这个比较合适（也可使用 VUEX，具体来说看需求）</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p><font color=#f3f size=6>vuex</font></p>
+<blockquote>
+<ol>
+<li>只用来读取的状态集中放在 store 中； 改变状态的方式是提交 mutations，这是个同步的事物； 异步逻辑应该封装在 action 中。</li>
+<li>在 main.js 引入 store，注入。新建了一个目录 store，… export</li>
+<li>场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车</li>
+</ol>
+</blockquote>
+</li>
+<li><p><font color=#f3f size=6> v-if 和 v-show 的区别</font></p>
+<blockquote>
+<blockquote>
+<ol>
+<li>v-if 是动态的向 DOM 树内添加或者删除 DOM 元素；v-show 是通过设置 DOM 元素的 display 样式属性控制显隐；</li>
+<li><font color=#E066E0 size=2>编译过程</font>: v-if 切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件；v-show 只是简单的基于 css 切换；</li>
+<li><font color=#E066E0 size=2>编译条件</font>:v-if 是惰性的，如果初始条件为假，则什么也不做；只有在条件第一次变为真时才开始局部编译（编译被缓存？编译被缓存后，然后再切换的时候进行局部卸载); v-show 是在任何条件下（首次条件是否为真）都被编译，然后被缓存，而且 DOM 元素保留；</li>
+<li><font color=#E066E0 size=2>性能消耗</font>：v-if 有更高的切换消耗；v-show 有更高的初始渲染消耗；</li>
+<li><font color=#E066E0 size=2>使用场景</font>：v-if 适合运营条件不大可能改变；v-show 适合频繁切换。</li>
+</ol>
+</blockquote>
+<ul>
+<li><font color=#E066E0 size=2>提示</font>：如果 v-show 作用的元素，css 文件中 display:none，通过 v-show 进行设置不能显示该元素；<blockquote>
+<p>原因：v-show 控制显隐，是通过 js 代码去修改元素的 element style，如果 value 为 false，设置 display: none;如果 value 为 true，设置 display: ‘’；于是 value 为 true 时，只能将 element style 中的 display 效果清除，并不能覆盖 css 中的 display 效果；</p>
+<p>解决方式：使用 v-show 的话，在 vue 解析之前隐藏 DOM 的话，尽量在 style 属性里面设置 display 的值，不要在 css 文件中</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p><font color=#f3f size=6> v-for 加 key 值的原因</font></p>
+<blockquote>
+<blockquote>
+<p>vue 中列表循环需加:key=”唯一标识” key 属性可以避免数据混乱的情况出现， key 的主要作用就是用来提高渲染性能的！</p>
+</blockquote>
+<ul>
+<li><font color=#f3f size=3> vue 中检测不到数据的变化 </font><blockquote>
+<ol>
+<li>为什么出现这种问题：受 ES5 的限制，Vue.js 不能检测到对象属性的添加或删除。因为 Vue.js 在初始化实例时将属性转为 getter/setter，所以属性必须在 data 对象上才能让 Vue.js 转换它，才能让它是响应的。请参照<a href="https://v1-cn.vuejs.org/guide/reactivity.html" target="_blank" rel="noopener">https://v1-cn.vuejs.org/guide/reactivity.html</a></li>
+<li>解决方式：1、对于普通数据对象，可以使用全局方法，通过 vue 的 this.$set(object, key, value)方法。2、想向已有对象上添加一些属性 可以创建一个新的对象，包含原对象的属性和新的属性：通过 Object.assign()重新创建一个对象, this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+    <time datetime="2020-03-13T13:48:21.000Z" class="entry-date">
+        2020-03-13
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/%E8%B7%A8%E5%9F%9F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/" rel="prev"><span class="meta-nav">←</span> 跨域详解及其常见的解决方式</a></span>
+    
+    
+        <span class="nav-next"><a href="/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="next">js常见问题 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/%E8%B7%A8%E5%9F%9F%E8%AF%A6%E8%A7%A3%E5%8F%8A%E5%85%B6%E5%B8%B8%E8%A7%81%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/">跨域详解及其常见的解决方式</a>
+          </li>
+        
+          <li>
+            <a href="/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">vue常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">js常见问题</a>
+          </li>
+        
+          <li>
+            <a href="/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F/">关于小程序</a>
+          </li>
+        
+          <li>
+            <a href="/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法?</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2020 刘晴
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
