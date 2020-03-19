@@ -4,37 +4,6 @@
   <meta charset="utf-8">
   
   
-  <meta name="description" content="come on 逆战来也
-一、小程序的种类
-微信小程序
-支付宝小程序
-头条小程序
-百度小程序
-QQ 小程序
-
-
-二、小程序发展史
-
-
-时间
-备注
-
-
-
-2016-09-21
-微信小程序内测
-
-
-2016-11-03
-微信小程序公测
-
-
-2017-01-09
-微信小程序正式上线
-
-
-2017-09-2" />
-  
 
   
   
@@ -42,17 +11,13 @@ QQ 小程序
   
   
   
-  <title>关于小程序 | 宇情</title>
+  <title>宇情</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="come on 逆战来也 一、小程序的种类 微信小程序 支付宝小程序 头条小程序 百度小程序 QQ 小程序   二、小程序发展史   时间 备注    2016-09-21 微信小程序内测   2016-11-03 微信小程序公测   2017-01-09 微信小程序正式上线   2017-09-20 支付宝小程序公测   2017-12-28 微信小程序首页下拉入口以及微信小程序上线   201">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于小程序">
-<meta property="og:url" content="http://yoursite.com/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="宇情">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="宇情">
-<meta property="og:description" content="come on 逆战来也 一、小程序的种类 微信小程序 支付宝小程序 头条小程序 百度小程序 QQ 小程序   二、小程序发展史   时间 备注    2016-09-21 微信小程序内测   2016-11-03 微信小程序公测   2017-01-09 微信小程序正式上线   2017-09-20 支付宝小程序公测   2017-12-28 微信小程序首页下拉入口以及微信小程序上线   201">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-02-23T10:00:05.000Z">
-<meta property="article:modified_time" content="2020-03-17T13:36:06.417Z">
 <meta property="article:author" content="刘晴">
 <meta name="twitter:card" content="summary">
   
@@ -97,15 +62,17 @@ QQ 小程序
 </header>
 
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-关于小程序" class="post-关于小程序 post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main">
+  
+    <article id="post-关于小程序" class="post-关于小程序 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
         
   
-    <h1 class="entry-title article-title">
-      关于小程序
+    <h1 class="entry-title">
+      <a class="article-title" href="/%E5%85%B3%E4%BA%8E%E5%B0%8F%E7%A8%8B%E5%BA%8F/">关于小程序</a>
     </h1>
   
 
@@ -302,22 +269,139 @@ QQ 小程序
 </article>
 
 
+
+
+
+
+  
+    <article id="post-数组去重方法" class="post-数组去重方法 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">数组去重方法?</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" data-id="ck7ye14860008h0tl4re6h561" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。<br>indexOf() 方法对大小写敏感！<br>如果要检索的字符串值没有出现，则该方法返回 -1。<br>new Set 实现去重<br>…实现解构</p>
+<p>JS 中的五种去重方法<br>第一种：遍历数组法<br>这种方法最简单最直观，也最容易理解，代码如下：</p>
+<p>这种方法很好理解，利用了 indexOf()方法（indexOf()方法如果查询到则返回查询到的第一个结果在数组中的索引，如果查询不到则返回-1）。先创建一个新的空数组用来存储新的去重的数组，然后遍历 arr 数组，在遍历过程中，分别判断 newArr 数组里面是不是有遍历到的 arr 中的元素，如果没有，直接添加进 newArr 中，如果已经有了（重复），那么不操作，那么从头到尾遍历一遍，正好达到了去重的目的。<br>第二种：数组下标判断法<br>这种方法也比较好理解，代码如下：</p>
+<p>这和第一种方法有重叠，不说多余的，直接看 if 这里，在遍历 arr 的过程中，如果在 arr 数组里面找当前的值，返回的索引等于当前的循环里面的 i 的话，那么证明这个值是第一次出现，所以推入到新数组里面，如果后面又遍历到了一个出现过的值，那也不会返回它的索引，indexof()方法只返回找到的第一个值的索引，所以重复的都会被 pass 掉，只出现一次的值都被存入新数组中，也达到了去重的目的。<br>第三种：排序后相邻去除法<br>这种方法用到了 sort()方法，代码如下：</p>
+<p>这种方法的思路是：先用 sort()方法把 arr 排序，那么排完序后，相同的一定是挨在一起的，把它去掉就好了，首先给新数组初始化一个 arr[0]，因为我们要用它和 arr 数组进行比较，所以，for 循环里面 i 也是从 1 开始了，我们让遍历到的 arr 中的值和新数组最后一位进行比较，如果相等，则 pass 掉，不相等的，push 进来，因为数组重新排序了，重复的都挨在一起，那么这就保证了重复的这几个值只有第一个会被 push 进来，其余的都和新数组的被 push 进来的这个元素相等，会被 pass 掉，也达到了去重的效果。<br>第四种：优化的遍历数组法</p>
+<p>思路：两层 for 循环，外面一层是控制遍历到的前一个 arr 中的元素，里面一层控制的是第一层访问到的元素后面的元素，不断的从第 0 个开始，让第 0 个和他后面的元素比较，如果没有和这个元素相等的，则证明没有重复，推入到新数组中存储起来，如果有和这个元素相等的，则 pass 掉它，直接进入下一次循环。从第 1 个开始，继续和它后面的元素进行比较，同上进行，一直循环到最后就是：不重复的都被推入新数组里面了，而重复的前面的元素被 pass 掉了，只留下了最后面的一个元素，这个时候也就不重复了，则推入新数组，过滤掉了所有重复的元素，达到了去重的目的。<br>第五种：数组遍历法</p>
+<p>思路：也是两层 for 循环，外层 for 循环控制的是 arr 数组的遍历，内层 for 循环控制的是新数组的遍历，从第 0 位开始，如果新数组中没有这个 arr 数组中遍历到的这个元素，那么状态变量 bl 的值还是 true，那么自然进入到了 if 中把这个值推入到新数组中，如果有这个元素，那么代表重复，则把状态变量 bl 取值改为 false，并且跳出当前循环，不会进入到 if 内部，而进入下一次外层开始的循环。这样循环往复，最后也达到了去重的效果。</p>
+<p>function dedupe(array) {<br>return Array.from(new Set(array));<br>}<br>console.log(dedupe([1, 1, 2, 3]))</p>
+<p>let arr = [1, 2, 3, 3];<br>let resultarr = […new Set(arr)];<br>console.log(resultarr);</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/">
+    <time datetime="2019-09-07T01:28:02.000Z" class="entry-date">
+        2019-09-07
+    </time>
+</a>
     
-<nav class="nav-single">
-    <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" rel="prev"><span class="meta-nav">←</span> js常见问题</a></span>
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-cookie-和-sessionStorage-以及-localStorage-的区别是什么" class="post-cookie-和-sessionStorage-以及-localStorage-的区别是什么 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/cookie-%E5%92%8C-sessionStorage-%E4%BB%A5%E5%8F%8A-localStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/">cookie 和 sessionStorage 以及 localStorage 的区别是什么?</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/cookie-%E5%92%8C-sessionStorage-%E4%BB%A5%E5%8F%8A-localStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/" data-id="ck7ye147g0000h0tl4qwfcupn" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="从生命周期来说"><a href="#从生命周期来说" class="headerlink" title="从生命周期来说"></a>从生命周期来说</h3><ol>
+<li>Cookie 作用范围。如不设置失效时间，则表示这个 cookie 的生命周期为浏览器会话期间，关闭浏览器，cookie 就会消失。若设置了失效时间，浏览器会把 cookie 保存到硬盘中，关闭后再打开浏览器这些 cookie 仍然有效,直到超过设定的过期时间。</li>
+<li>localStorage 除非被清除，否则始终有效，窗口或浏览器关闭也一直保存，因此用作持久数据</li>
+<li>sessionStorage 仅在当前会话期间有效，关闭浏览器会被清除</li>
+</ol>
+<h3 id="存放数据大小"><a href="#存放数据大小" class="headerlink" title="存放数据大小"></a>存放数据大小</h3><ol>
+<li>Cookie 不能超过 4K</li>
+<li>localStorage 一般为 5MB 或者更大</li>
+<li>sessionStorage 一般为 5MB 或者更大</li>
+</ol>
+<h3 id="与服务器端通信"><a href="#与服务器端通信" class="headerlink" title="与服务器端通信"></a>与服务器端通信</h3><ol>
+<li><p>Cookie 每次请求都会携带在 http 头中，如果使用 Cookie 保存过多数据会带来性能问题。在所有同源窗口中都是共享的</p>
+</li>
+<li><p>localStorage 仅在客户端中保存，不参与服务器的通信。在所有同源窗口中都是共享的</p>
+</li>
+<li><p>sessionStorage 不在不同的浏览器窗口共享，即使在同一个页面。仅在客户端中保存，不参与服务器的通信。<br>易用性</p>
+</li>
+<li><p>Cookie 需要程序员自己封装，原生的 Cookie 接口不友好</p>
+</li>
+<li><p>localStorage 原生接口可以接受，亦可再次封装来对 Object 和 Array 有更好的支持</p>
+</li>
+<li><p>sessionStorage 原生接口可以接受，亦可再次封装来对 Object 和 Array 有更好的支持<br>数据传递不同</p>
+</li>
+<li><p>Cookie 数据始终在同源的 http 请求中携带（即使不需要），即 cookie 在浏览器和服务器间来回传递，cookie 数据还有路径（path）的概念，可以限制 cookie 只属于某个路径下</p>
+</li>
+<li><p>sessionStorage 和 localStorage 不会自动把数据发送给服务器，仅在本地保存。</p>
+</li>
+</ol>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/cookie-%E5%92%8C-sessionStorage-%E4%BB%A5%E5%8F%8A-localStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88/">
+    <time datetime="2019-03-06T01:15:55.000Z" class="entry-date">
+        2019-03-06
+    </time>
+</a>
     
     
-        <span class="nav-next"><a href="/%E6%95%B0%E7%BB%84%E5%8E%BB%E9%87%8D%E6%96%B9%E6%B3%95/" rel="next">数组去重方法? <span class="meta-nav">→</span></a></span>
-    
-</nav><!-- .nav-single -->
+    </footer>
+</article>
 
 
 
 
 
 
+  
+  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+      </nav>
+    </nav>
+  
 
 </div></div>
         <div id="secondary" class="widget-area" role="complementary">
