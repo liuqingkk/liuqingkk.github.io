@@ -26,7 +26,7 @@ jsonp 之所以能够实现跨域资源的访问，是因为 script 标签不受
 <meta property="og:description" content="一、跨域出现原因 浏览器限制跨域访问资源是一种安全策略，可以预防某些恶意行为。浏览器在每次发起请求时都会带上 cookie，试想下，如果没有这总安全策略，用户的数据就被泄露。跨域限制就是为了避免这种情况的发生。 解决方式 jsonp 之所以能够实现跨域资源的访问，是因为 script 标签不受浏览器同源策略的限制，使用时将 src 属性指定一个跨域 URL，服务器在收到请求后，将数据放到指定的 o">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-16T09:50:10.000Z">
-<meta property="article:modified_time" content="2020-03-22T09:23:51.485Z">
+<meta property="article:modified_time" content="2020-03-25T07:49:23.067Z">
 <meta property="article:author" content="刘晴">
 <meta name="twitter:card" content="summary">
   
@@ -86,7 +86,7 @@ jsonp 之所以能够实现跨域资源的访问，是因为 script 标签不受
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E6%90%9C%E7%B4%A2%E8%BF%87%E7%A8%8B/" data-id="ck82u6zey000btotl0lxrd5dv" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E6%90%9C%E7%B4%A2%E8%BF%87%E7%A8%8B/" data-id="ckafgsfxr000enktlao7p3rhf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -98,7 +98,7 @@ jsonp 之所以能够实现跨域资源的访问，是因为 script 标签不受
 <li><p>jsonp 之所以能够实现跨域资源的访问，是因为 script 标签不受浏览器同源策略的限制，使用时将 src 属性指定一个跨域 URL，服务器在收到请求后，将数据放到指定的 onback 里传回来。</p>
 <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> script<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'text/javascript'</span><span class="token punctuation">;</span> <span class="token comment">// 传参并指定回调执行函数为 onBack</span>script<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'http://www.....:8080/login?user=admin&amp;callback=onBack'</span><span class="token punctuation">;</span>document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 回调执行函数</span><span class="token keyword">function</span> <span class="token function">onBack</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre></div>
 </li>
-<li><p>CORS（cross-origin-resource-sharing）跨域资源共享，其思想是使用自定义的 HTTP 头部，让浏览器域服务器进行沟通，从而决定请求或响应是成功还是失败。服务器端一般在 Access-Control-Allow-Origin 中指定对应的域，当浏览器访问对应的资源。主要是后端在请求头里面设置安全域名</p>
+<li><p>CORS（cross-origin-resource-sharing）跨域资源共享，其思想是使用自定义的 HTTP 头部，让浏览器与服务器进行沟通，从而决定请求或响应是成功还是失败。服务器端一般在 Access-Control-Allow-Origin 中指定对应的域，当浏览器访问对应的资源。主要是后端在请求头里面设置安全域名</p>
 </li>
 <li><p>document.domain + iframe 跨域 此方案仅限主域相同，子域不同的跨域应用场景 父窗口：(<a href="http://www.domain.com/a.html" target="_blank" rel="noopener">http://www.domain.com/a.html</a>) <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iframe<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><a href="http://child.domain.com/b.html" target="_blank" rel="noopener">http://child.domain.com/b.html</a><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span> > <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"> document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span> > <span class="token keyword">var</span> user <span class="token operator">=</span> <span class="token string">'admin'</span><span class="token punctuation">;</span> > </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> > </code></pre></div> 子窗口：(<a href="http://child.domain.com/b.html" target="_blank" rel="noopener">http://child.domain.com/b.html</a>) <div class="language-javascript extra-class"><pre class="language-javascript"><code>document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span> > <span class="token comment">// 获取父窗口中变量</span> > <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'get js data from parent ---&gt; '</span> <span class="token operator">+</span> window<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span> > </code></pre></div></p>
 </li>
@@ -195,23 +195,23 @@ jsonp 之所以能够实现跨域资源的访问，是因为 script 标签不受
       <ul>
         
           <li>
+            <a href="/react-Hooks/">react Hooks</a>
+          </li>
+        
+          <li>
+            <a href="/MVC%EF%BC%8CMVP-%E5%92%8C-MVVM/">MVC，MVP 和 MVVM</a>
+          </li>
+        
+          <li>
+            <a href="/rredux%E6%98%AF%E5%95%A5/">rredux是啥</a>
+          </li>
+        
+          <li>
             <a href="/react%E5%B0%8F%E7%BB%93/">react小结</a>
           </li>
         
           <li>
             <a href="/nodeJs/">nodeJs</a>
-          </li>
-        
-          <li>
-            <a href="/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E6%90%9C%E7%B4%A2%E8%BF%87%E7%A8%8B/">跨域及搜索过程</a>
-          </li>
-        
-          <li>
-            <a href="/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">vue常见问题</a>
-          </li>
-        
-          <li>
-            <a href="/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">js常见问题</a>
           </li>
         
       </ul>

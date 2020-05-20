@@ -64,7 +64,7 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
-    <article id="post-vue常见问题" class="post-vue常见问题 post type-post status-publish format-standard hentry">
+    <article id="post-react小结" class="post-react小结 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -72,81 +72,40 @@
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">vue常见问题</a>
+      <a class="article-title" href="/react%E5%B0%8F%E7%BB%93/">react小结</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ck82u6zen0007totlgnux6b7f" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/react%E5%B0%8F%E7%BB%93/" data-id="ckafgsfxi000anktlhakrbaq9" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><ol>
-<li><p><font color=#f3f size=6>ref</font> 通俗：ref 除了可以获取本页面的 dom 元素，还可以拿到子组件中的 data 和去调用子组件中的方法。 ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的$refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例;当 v-for 用于元素或组件的时候，引用信息将是包含 DOM 节点或组件实例的数组。关于 ref 注册时间的重要说明：因为 ref 本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们 - 它们还不存在！, $refs 也不是响应式的，因此你不应该试图用它在模板中做数据绑定。</p>
-</li>
-<li><p><font color=#f3f size=6>publicpath</font> 的配置默认是 “/“，可以直接输入文件名即可访问；确保 publicPath 总是以斜杠(/)开头和结尾。也可以使用一个完整的 URL。这是模块热替换所必需的。 <a href="https://cli.vuejs.org/zh/config/#publicpath" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/#publicpath</a></p>
-</li>
-<li><p><font color=#f3f size=6>vue-router</font> Vue Router 是 Vue.js 官方的路由管理器。它和 Vue.js 的核心深度集成，让构建单页面应用变得易如反掌。&gt; <p>如果在一个模块化工程中使用它，必须要通过 <code>Vue.use()</code> 明确地安装路由功能：</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>, <span class="token keyword">import</span> VueRouter <span class="token keyword">from</span> <span class="token string">'vue-router', </span>Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueRouter<span class="token punctuation">)</span> </code></pre></div></p>
-<pre><code>3-1. vue-router 包含的功能有：
-  1. 嵌套的路由/视图表
-  2. 模块化的、基于组件的路由配置
-  3. 路由参数、查询、通配符
-  4. 基于 Vue.js 过渡系统的视图过渡效果
-  5. 细粒度的导航控制
-  6. 带有自动激活的 CSS class 的链接
-  7. HTML5 历史模式或 hash 模式，在 IE9 中自动降级
-  8. 自定义的滚动条行为</code></pre><blockquote>
-</blockquote>
-<pre><code>3-2. vue-router 分为几个模块：
- 1. 默认 hash 模式 —— 使用 URL 的 hash 来模拟一个完整的 URL，于是当 URL 改变时，页面不会重新加载。</code></pre><ol start="2">
-<li><p>如果不想要很丑的 hash，我们可以用路由的 history 模式，这种模式充分利用 history.pushState API 来完成 URL 跳转而无须重新加载页面。<pre class="language-js"><code><span class="token keyword">const</span> router <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueRouter</span><span class="token punctuation">(</span><span class="token punctuation">{</span>mode<span class="token punctuation">:</span> <span class="token string">'history'</span><span class="token punctuation">,</span>routes<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token operator">...</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> </code></pre></p>
-</li>
-<li><p>‘abstract’模式，不涉及和浏览器地址的相关记录，流程跟’HashHistory’是一样的，其原理是通过数组模拟浏览器历史记录栈的功能</p>
-<p>3-3. <font color=#f3f size=3>组件之间的传参</font></p>
-<ol>
-<li>父组件传给子组件：子组件通过 props 方法接受数据；</li>
-<li>子组件传给父组件： $emit 方法传递参数</li>
-<li>非父子组件间的数据传递，兄弟组件传值：eventBus，就是创建一个事件中心，相当于中转站，可以用它来传递事件和接收事件。项目比较小时，用这个比较合适（也可使用 VUEX，具体来说看需求）</li>
+        <h3 id="一、-react-如何做-App"><a href="#一、-react-如何做-App" class="headerlink" title="一、 react 如何做 App"></a>一、 react 如何做 App</h3><ol>
+<li>安装依赖项</li>
 </ol>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save react-router-dom</span><br></pre></td></tr></table></figure>
+
+<h3 id="二、react-组件"><a href="#二、react-组件" class="headerlink" title="二、react 组件"></a>二、react 组件</h3><ol>
+<li>函数组件</li>
+<li>类组件</li>
 </ol>
-</li>
-<li><p><font color=#f3f size=6>vuex</font></p>
-<ol>
-<li>只用来读取的状态集中放在 store 中； 改变状态的方式是提交 mutations，这是个同步的事物； 异步逻辑应该封装在 action 中。</li>
-<li>在 main.js 引入 store，注入。新建了一个目录 store，… export</li>
-<li>场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车</li>
+<h3 id="三、组件之间的通讯"><a href="#三、组件之间的通讯" class="headerlink" title="三、组件之间的通讯"></a>三、组件之间的通讯</h3><ol>
+<li>父传子：父组件向子组件传值是在调用子组件的时候通过参数(props)传递给子组件</li>
+<li>子传父：有时候子组件需要调用父组件的某个方法，需要在父组件加载子组件的时候将方法当参数传递给子组件,父-代码：<pre class="has" name="code"><code class="language-javascript hljs"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> CommunicateChild <span class="hljs-keyword">from</span> <span class="hljs-string">'./communicateChild'</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Communicate</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">constructor</span>(props){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">super</span>(props)</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> methodToChild(){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> alert(<span class="hljs-string">"子组件调用父组件的方法"</span>)</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> render(){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">return</span>(</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"Communicate"</span>&gt;</span></span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>父子组件之间的通信<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{'-----------------------父组件-----------------------'}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">h2</span>&gt;</span>我是父组件<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">br</span>/&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>{'-----------------------子组件-----------------------'}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">CommunicateChild</span> <span class="hljs-attr">methodToChild</span>=<span class="hljs-string">{this.methodToChild.bind(this)}/</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="22"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="23"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> )</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="24"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> }</div></div></li></ol></code><div class="hljs-button signin" data-title="登录后复制" onclick="hljs.signin(event)"></div></pre><br>子代码：<pre class="has" name="code"><code class="language-javascript hljs"><ol class="hljs-ln"><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="1"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">import</span> React, { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="2"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> </div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="3"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CommunicateChild</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="4"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">constructor</span>(props){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="5"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">super</span>(props)</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="6"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">this</span>.getParentMethod = <span class="hljs-keyword">this</span>.getParentMethod.bind(<span class="hljs-keyword">this</span>)</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="7"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="8"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> getParentMethod(){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="9"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">this</span>.props.methodToChild()</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="10"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="11"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> render(){</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="12"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-keyword">return</span>(</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="13"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"CommunicateChild"</span>&gt;</span></span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="14"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="15"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>子组件调用父组件的方法<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="16"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.getParentMethod}</span>&gt;</span>调用父组件的方法<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="17"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="18"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="19"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> )</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="20"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line"> }</div></div></li><li><div class="hljs-ln-numbers"><div class="hljs-ln-line hljs-ln-n" data-line-number="21"></div></div><div class="hljs-ln-code"><div class="hljs-ln-line">}</div></div></li></ol></code><div class="hljs-button signin" data-title="登录后复制" onclick="hljs.signin(event)"></div></pre></li>
 </ol>
-</li>
-<li><p><font color=#f3f size=6> v-if 和 v-show 的区别</font></p>
+<h3 id="Redux-数据流："><a href="#Redux-数据流：" class="headerlink" title="Redux 数据流："></a>Redux 数据流：</h3><p><a href="https://www.redux.org.cn/docs/basics/DataFlow.html" target="_blank" rel="noopener">https://www.redux.org.cn/docs/basics/DataFlow.html</a></p>
 <ol>
-<li>v-if 是动态的向 DOM 树内添加或者删除 DOM 元素；v-show 是通过设置 DOM 元素的 display 样式属性控制显隐；</li>
-<li><font color=#E066E0 size=2>编译过程</font>: v-if 切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件；v-show 只是简单的基于 css 切换；</li>
-<li><font color=#E066E0 size=2>编译条件</font>:v-if 是惰性的，如果初始条件为假，则什么也不做；只有在条件第一次变为真时才开始局部编译（编译被缓存？编译被缓存后，然后再切换的时候进行局部卸载); v-show 是在任何条件下（首次条件是否为真）都被编译，然后被缓存，而且 DOM 元素保留；</li>
-<li><font color=#E066E0 size=2>性能消耗</font>：v-if 有更高的切换消耗；v-show 有更高的初始渲染消耗；</li>
-<li><font color=#E066E0 size=2>使用场景</font>：v-if 适合运营条件不大可能改变；v-show 适合频繁切换。</li>
-</ol>
-<ul>
-<li><font color=#E066E0 size=2>提示</font>：如果 v-show 作用的元素，css 文件中 display:none，通过 v-show 进行设置不能显示该元素；<ul>
-<li>原因：v-show 控制显隐，是通过 js 代码去修改元素的 element style，如果 value 为 false，设置 display: none;如果 value 为 true，设置 display: ‘’；于是 value 为 true 时，只能将 element style 中的 display 效果清除，并不能覆盖 css 中的 display 效果；</li>
-<li>解决方式：使用 v-show 的话，在 vue 解析之前隐藏 DOM 的话，尽量在 style 属性里面设置 display 的值，不要在 css 文件中</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><font color=#f3f size=6> v-for 加 key 值的原因</font></p>
-<ul>
-<li>vue 中列表循环需加:key=”唯一标识” key 属性可以避免数据混乱的情况出现， key 的主要作用就是用来提高渲染性能的！</li>
-</ul>
-</li>
-<li><p><font color=#f3f size=5> vue 中检测不到数据的变化 </font></p>
-<ol>
-<li>为什么出现这种问题：受 ES5 的限制，Vue.js 不能检测到对象属性的添加或删除。因为 Vue.js 在初始化实例时将属性转为 getter/setter，所以属性必须在 data 对象上才能让 Vue.js 转换它，才能让它是响应的。请参照<a href="https://v1-cn.vuejs.org/guide/reactivity.html" target="_blank" rel="noopener">https://v1-cn.vuejs.org/guide/reactivity.html</a></li>
-<li>解决方式：1、对于普通数据对象，可以使用全局方法，通过 vue 的 this.$set(object, key, value)方法。2、想向已有对象上添加一些属性 可以创建一个新的对象，包含原对象的属性和新的属性：通过 Object.assign()重新创建一个对象, this.someObject = Object.assign({}, this.someObject, { a: 1, b: 2 })</li>
+<li>Redux 是一个单向数据流的开发调试插件</li>
+<li>Redux 应用中数据的生命周期遵循下面 4 个步骤：<ol>
+<li>调用 store.dispatch(action)。Action 就是一个描述“发生了什么”的普通对象，可以在任何地方调用 store.dispatch(action)，包括组件中、XHR 回调中、甚至定时器中</li>
+<li>Redux store 调用传入的 reducer 函数。Store 会把两个参数传入 reducer： 当前的 state 树和 action</li>
+<li>根 reducer 应该把多个子 reducer 输出合并成一个单一的 state 树。</li>
+<li>Redux store 保存了根 reducer 返回的完整 state 树。</li>
 </ol>
 </li>
 </ol>
@@ -155,9 +114,9 @@
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
-    <time datetime="2020-03-13T13:48:21.000Z" class="entry-date">
-        2020-03-13
+    <a href="/react%E5%B0%8F%E7%BB%93/">
+    <time datetime="2020-03-21T09:15:12.000Z" class="entry-date">
+        2020-03-21
     </time>
 </a>
     
@@ -171,7 +130,7 @@
 
 
   
-    <article id="post-js常见问题" class="post-js常见问题 post type-post status-publish format-standard hentry">
+    <article id="post-nodeJs" class="post-nodeJs post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
@@ -179,231 +138,187 @@
         
   
     <h1 class="entry-title">
-      <a class="article-title" href="/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">js常见问题</a>
+      <a class="article-title" href="/nodeJs/">nodeJs</a>
     </h1>
   
 
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" data-id="ck82u6zek0005totlch457s14" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/nodeJs/" data-id="ckafgsfxa0005nktl27t803mj" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        <p><font color=#f3f size=4>一、数组去重</font></p>
-<blockquote>
-<h3 id="let-array-Array-from-new-Set-1-1-1-2-3-2-4"><a href="#let-array-Array-from-new-Set-1-1-1-2-3-2-4" class="headerlink" title="let array = Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));"></a>let array = Array.from(new Set([1, 1, 1, 2, 3, 2, 4]));</h3></blockquote>
-<p><font color=#f3f size=4>二、for in 和 for of 的区别</font></p>
-<ol>
-<li>for…in 循环：只能获得对象的键名，不能获得键值，for…of 循环：允许遍历获得键值</li>
-</ol>
-<p><font color=#f3f size=4>三、let var const 的区别</font></p>
-<ol>
-<li>let 块级作用域；不存在变量提升（有暂时性死区）；不可重复定义；声明的变量不会作为 window 的属性</li>
-<li>var 函数作用域；存在变量提升；可重复定义；声明的变量会作为 window 的属性。</li>
-<li>const 声明一个只读的常量。一旦声明，常量的值就不能改变。</li>
-</ol>
-<p><font color=#f3f size=4>四、通过原型链实现数组内置方法</font> Array.prototype<div class="_2Uzcx_"><pre class="line-numbers  language-javascript"><code class="JavaScript  language-javascript"><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">reverse</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">var</span> output <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&gt;=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>output<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> output<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> output<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> <span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></div><br><font color=#f3f size=4>五、git</font>多人协作流程：git pull 拉取至本地，git clone 克隆，git push 加入项目</p>
-<p><font color=#f3f size=4>六、WebSocket</font></p>
-<ol>
-<li>怎么实现数据的实时更新：就是先使用 HTTP 协议建立连接，然后使用底层的 TCP 连接继续通信<ul>
-<li>Websocket 由来：由于 http 存在一个明显的弊端（消息只能有客户端推送到服务器端，而服务器端不能主动推送到客户端），导致如果服务器如果有连续的变化，这时只能使用轮询，而轮询效率过低，并不适合。于是 WebSocket (是一个持久化的协议，基于 http，服务端可以主动 push) 被发明出来</li>
-<li>WebSocket 是一种全双工的计算机通信协议，它建立在 TCP 的基础之上。它可以在服务器与浏览器之间建立一个长连接，然后进行实时的数据传输。而我们比较熟悉的 HTTP，它一般也是建立在 TCP 之上的，不同的是，它不是全双工的，而是请求-相应式的，每次通信都需要发起新的请求，而且每次发起请求，都需要重新建立连接。websocket 相比于 http 具有的优点：<ol>
-<li>支持双向通信，实时性更强；</li>
-<li>可以发送文本，也可以二进制文件；</li>
-<li>协议标识符是 ws，加密后是 wss ；</li>
-<li>较少的控制开销。连接创建后，ws 客户端、服务端进行数据交换时，协议控制的数据包头部较小。在不包含头部的情况下，服务端到客户端的包头只有 2~10 字节（取决于数据包长度），客户端到服务端的的话，需要加上额外的 4 字节的掩码。而 HTTP 协议每次通信都需要携带完整的头部；</li>
-<li>支持扩展。ws 协议定义了扩展，用户可以扩展协议，或者实现自定义的子协议。（比如支持自定义压缩算法等）</li>
-<li>无跨域问题。</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<p><font color=#f3f size=4>七、swiper 轮播的原理</font></p>
-<ol>
-<li>Swiper 的每个展示块（屏）为一个 slide，slide 中放置图片或文字等展示的内容，全部 slide 排成一行(或多行)包含在包装器 wrapper /ˈræpə(r)/ 中，而总容器 container 又包裹着 wrapper 和箭头按钮控件 navigation 以及分页器控件 pagination。</li>
-<li>当手指（或鼠标）触摸滑动 Swiper 时，Swiper 在浏览器每一帧通过计算滑动的距离差对 wrapper 进行位移（transform）从而产生拖动的效果。在手指（或鼠标）释放时，计算下一个 slide 的起始位置对 wrapper 设置位移动画（transition），从而产生切换动画效果。</li>
-</ol>
-<p><font color=#f3f size=4>八、一个对象怎么实现深拷贝</font> (浅拷贝只解决了第一层的问题，如果接下去的值中还有对象的话，就需要深拷贝)</p>
-<ol>
-<li>对原始对象属性所引用的对象进行进行递归拷贝 var newObject = $.extend(true, {}, oldObject);</li>
-<li>可以通过 JSON.parse(JSON.stringify(object))<ul>
-<li>局限性：<ol>
-<li>会忽略 undefined</li>
-<li>会忽略 symbol</li>
-<li>在遇到函数、 undefined 或者 symbol 的时候，该对象不能正常的序列化</li>
-<li>不能解决循环引用的对象</li>
-</ol>
-</li>
-</ul>
-</li>
-</ol>
-<p><font color=#f3f size=4>九、浅拷贝</font></p>
-<ol>
-<li>直接赋值的方法，其中一方改变，另一方也会相应改变。<strong>_ 如何解决 _</strong>：<ol>
-<li>Object.assign<div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token keyword">let</span> b <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">assign</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> a<span class="token punctuation">)</span>a<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">2</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 1</span></code></pre></div></li>
-<li>可以通过展开运算符（…）<div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">let</span> a <span class="token operator">=</span> <span class="token punctuation">{</span>age<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">}</span><span class="token keyword">let</span> b <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token operator">...</span>a<span class="token punctuation">}</span>a<span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">2</span>console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 1</span></code></pre></div></li>
-</ol>
-</li>
-</ol>
-<p><font color=#f3f size=4>十、介绍下 es6 里面的 promise</font></p>
-<ol>
-<li><p>Promise 是 ES6 新增的语法，解决了回调地狱的问题</p>
-</li>
-<li><p>可以把 Promise 看成一个状态机。初始是 pending 状态，可以通过函数 resolve 和 reject，将状态转变为 resolved 或者 rejected 状态，状态一旦改变就不能再次变化。</p>
-</li>
-<li><p>then 函数会返回一个 Promise 实例，并且该返回值是一个新的实例而不是之前的实例。因为 Promise 规范规定除了 pending 状态，其他状态是不可以改变的，如果返回的是一个相同实例的话，多个 then 调用就失去意义了。 对于 then 来说，本质上可以把它看成是 flatMap</p>
-</li>
-<li><p>Promise 对象用来进行延迟(deferred) 和异步(asynchronous) 计算</p>
-</li>
-<li><p>构造 promise 的基本用法</p>
-<div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> promise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">...</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  <span class="token comment">// succeed</span><span class="token function">resolve</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>   <span class="token comment">// fails</span><span class="token function">reject</span><span class="token punctuation">(</span><span class="token function">Error</span><span class="token punctuation">(</span>errMessage<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<p></code></pre></div></p>
-</li>
-<li><p>关于 Promise 的链式调用异步转同步</p>
-<ol>
-<li>关于 Promise<ol>
-<li>Promise.then() 用于链式调用</li>
-<li>Promise.catch()：在链式写法中可以捕获 then 中发送的异常</li>
-<li>Promise.all() 多个 Promise 并行进行,当所有 Promise reslove 时 reslove，当有一个 Promise reject 时 reject (获得的成功结果的数组里面的数据顺序与 Promise.all()接收参数的顺序是一致的)</li>
-<li>Promise.race() 在第一个 Promise 对象变为 fulfilled 之后，并不会取消其他 promise 对象的执行。只是只有先完成的 Promise 才会被 Promice.race 后面的 then()处理，其他 promise 还是在执行的，只不过不会进入到 promise.race 后面的 then 里。</li>
-</ol>
-</li>
-<li>关于 async/await<ul>
-<li>这个是 ES7 中的异步解决方案,在 Node v8.0.0 及其以上已经原生支持,在低版本的 Node 中需要开启–harmony-async-await 选项</li>
-</ul>
-<ol>
-<li>async 表示这是一个 async 函数，await 只能用在这个函数里面。</li>
-<li>await 表示在这里等待 Promise 返回结果了，再继续执行。</li>
-<li>await 后面跟着的应该是一个 Promise 对象</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<ul>
-<li><font color=#f5f size=3>注意：</font><br>我们用 Promise 的时候一般是包在一个函数中，在需要的时候去运行这个函数</li>
-</ul>
-<p><font color=#f3f size=4>十一、call、apply、bind</font></p>
-<ol>
-<li><p>call()、apply()、bind() 都是用来重定义 this 这个对象的, 但是 bind 返回的是一个新的函数，你必须调用它才会被执行</p>
-</li>
-<li><p>call() 、bind() 、 apply() 这三个函数的第一个参数都是 this 的指向对象</p>
-<ol>
-<li>call 的参数是直接放进去的，第二第三第 n 个参数全都用逗号分隔，call(zk,’郑州’, … ,’string’ )</li>
-<li>apply 的所有参数都必须放在一个数组里面传进去 apply(zk,[ ‘郑州’, …, ‘string’ ])</li>
-<li>bind 除了返回是函数以外，它的参数和 call 一样</li>
-</ol>
-</li>
-<li><p>三者的参数不限定是 string 类型，允许是各种类型，包括函数 、 object …</p>
-</li>
-</ol>
-<h3 id="补充：怪异盒模型"><a href="#补充：怪异盒模型" class="headerlink" title="补充：怪异盒模型"></a>补充：怪异盒模型</h3><p>box-sizing：border-box；</p>
-<ul>
-<li>主轴方向居中：justify-content：center</li>
-<li>改变主轴对齐方式：flex-direction：column</li>
-<li>两端对齐中间自动分配: justify-content: space-between；默认左对齐：flex-start</li>
-<li>侧轴垂直居中对齐：align-items: center；底对齐：flex-end</li>
-<li>项目单行：flex-wrap：nowrap</li>
-<li>多行间的居中对齐：align-content：center<!-- Taro 是个框架吗可以 .then 吗；几个前端：3 个；技术经理干啥的：主要是前端啥都干点；怎么看待加班的问题；之前上班的状态加班多吗；登录怎么做；怎么确定是我这个用户调用的接口；小程序涉及到的权限问题比如首页扫一扫，打开摄像头；vue 的生命周期； ；对页面的 dom 元素进行修改在 created 里面修改行吗(提示：因为 created 内部的虚拟 dom 还没完成，还没有编译所以此时访问不到 dom)？；展示列表的数组修改第一项的内容(调试工具里已经刷新了)，但是页面没有修改成功怎么办(提示：这是一个数组，vue 官方里面有一个定义方法，vue 不能对数组里面的数据做到实时渲染，给他提供了一些官方的方法，比如\$.set)；双向数据绑定原理？；v-model 的具体使用；说一下常用指令(tip：v-if、v-show)；有没有做过登陆(token 一般放到哪，请求接口带给后台)；js 循环遍历有哪些(tip: foreach、for 循环、map)；给你一个对象，不知道里面有几层怎么做到把数组(还有二维数组或者三维数组)每一项取出来；有用过 js 的递归吗；this 在不同地方指向问题，普通函数的 this 指啥；vue 组件里面的 this 指向？(tip: this.data,this 是谁，实际上就是 vue 组件的实例)；双等和三个等号的区别；从信用来说哪一个更好些；平时自己有没有学习；什么时候离职：年前一月份；平时有没有看技术博客，有没有自己写过； -->
-</li>
-</ul>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
-    <time datetime="2020-03-13T12:16:09.000Z" class="entry-date">
-        2020-03-13
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-uniapp" class="post-uniapp post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/uniapp/">uniapp</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/uniapp/" data-id="ck82u6zep0009totl3hznc37e" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <ol>
-<li>uni-app 文档<a href="http://uniapp.dcloud.io/collocation/main" target="_blank" rel="noopener">http://uniapp.dcloud.io/collocation/main</a></li>
-<li>关于 uni-app 必须知道的<a href="https://ask.dcloud.net.cn/article/35489" target="_blank" rel="noopener">https://ask.dcloud.net.cn/article/35489</a></li>
-<li>uni-app 是一个使用 Vue.js 开发所有前端应用的框架，开发者编写一套代码，可发布到 iOS、Android、H5、以及各种小程序（微信/支付宝/百度/头条/QQ/钉钉）等多个平台。</li>
-</ol>
-<h4 id="一、uni-app-生命周期"><a href="#一、uni-app-生命周期" class="headerlink" title=" 一、uni-app 生命周期"></a><font color=#f3f size=4> 一、uni-app 生命周期</font></h4><ul>
-<li>注意：应用生命周期仅可在 App.vue 中监听，在其它页面监听无效。<table>
+        <table>
 <thead>
 <tr>
-<th style="text-align:left">函数名</th>
-<th style="text-align:left">说明</th>
+<th>require(引入模块)</th>
+<th align="center">作用</th>
+<th align="right"></th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">onLaunch</td>
-<td style="text-align:left">当<code>uni-app</code> 初始化完成时触发（全局只触发一次）</td>
+<tbody><tr>
+<td>fs(系统模块)</td>
+<td align="center">用来操作本地文件 FileSystem</td>
+<td align="right">$1600</td>
 </tr>
 <tr>
-<td style="text-align:left">onShow</td>
-<td style="text-align:left">当 <code>uni-app</code> 启动，或从后台进入前台显示</td>
+<td>cheerio</td>
+<td align="center">可以在 nodejs 中使用，用来解析 html 内容,也可以做爬虫,其元素选择的方式和 jQuery 一模一样</td>
+<td align="right">$12</td>
 </tr>
 <tr>
-<td style="text-align:left">onHide</td>
-<td style="text-align:left">当 <code>uni-app</code> 从前台进入后台</td>
+<td>zebra stripes</td>
+<td align="center">are neat</td>
+<td align="right">express 框架</td>
 </tr>
-<tr>
-<td style="text-align:left">onError</td>
-<td style="text-align:left">当 <code>uni-app</code> 报错时触发</td>
-</tr>
-<tr>
-<td style="text-align:left">onUniNViewMessage</td>
-<td style="text-align:left">对 <code>nvue</code> 页面发送的数据进行监听，可参考 <a href="/use-weex?id=nvue-%e5%90%91-vue-%e9%80%9a%e8%ae%af">nvue 向 vue 通讯</a></td>
-</tr>
-</tbody>
-</table>
-
-</li>
+</tbody></table>
+<p><strong>module.exports 导出一个模块</strong></p>
+<h2 id="require"><a href="#require" class="headerlink" title="require"></a><strong><em>require</em></strong></h2><ul>
+<li>如果没有加相对路径，则会默认从 nodejs 系统模块中查找，然后查找当前项目中的 node_modules 目录，若还没找到则会报错 (这是倾斜的文字)</li>
 </ul>
-<h4 id="二、getApp"><a href="#二、getApp" class="headerlink" title="二、getApp"></a>二、getApp</h4><ol>
-<li>getApp: 一般在页面内部调用，</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如何创建nodejs项目：</span><br><span class="line"> ```bash命令行</span><br><span class="line"></span><br><span class="line"> npm init 初始化一个项目,生成一个package.json文件</span><br><span class="line"> npm i ** 安装一个指定模块</span><br><span class="line"> npm uninstall ** 删除指定模块</span><br><span class="line">control+~打开终端</span><br></pre></td></tr></table></figure>
+
+<p>&emsp;&emsp;<strong>nodejs</strong> : 是一个服务器端开发框架，可以实现 java 或者 php 等服务器端语言能做的事情。</p>
+<h2 id="nodejs-机制"><a href="#nodejs-机制" class="headerlink" title="nodejs 机制"></a>nodejs 机制</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">错误优先，在nodejs中大部分的模块的回调函数中第一个参数为异常信息。</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>URLSearchParams : 把当前 url 中的 search 数据转换为一个 js 对象，可以通过 get 方法获取对应的值</p>
+</blockquote>
+<blockquote>
+<p>existsSync : 判断是否存在目录,然后返回 boolean 值</p>
+</blockquote>
+<blockquote>
+<p>recursive : true；循环创建,如果父级不存在会自动创建</p>
+</blockquote>
+<blockquote>
+<p>fs.readFile(): 异步读取数据<br><br><strong><em>参数 1</em></strong>：是文件的路径，可以是绝对路径，也可以是相对路径。注意，如果是相对路径，是相对于当前进程所在的路径（process.cwd()），而不是相对于当前脚本所在的路径；<br><strong><em>参数 2</em></strong>：是读取完成后的回调函数。该函数的第一个参数是发生错误时的错误对象，第二个参数是代表文件内容的 Buffer 实例;返回数据时二进制流转为字符串 tostring</p>
+</blockquote>
+<blockquote>
+<p>readFileSync(): 方法用于同步读取文件，返回一个字符串<br><br><strong>参数 1</strong>：是文件路径.<br><strong>参数 2</strong>：可以是一个表示配置的对象，也可以是一个表示文本文件编码的字符串。默认的配置对象是{ encoding: null, flag: ‘r’ }，即文件编码默认为 null，读取模式默认为 r（只读）。如果第二个参数不指定编码（encoding），readFileSync 方法返回一个 Buffer 实例，否则返回的是一个字符串。</p>
+</blockquote>
+<p>&emsp;&emsp; (<code>) 正常情况下原生js(在浏览器运行)不能操作文件，nodejs在自己电脑上运行的，可以理解为服务器， (</code>)</p>
+<blockquote>
+<p>writeFile()：用于异步写入文件。<br><br><strong>参数 1</strong>：是写入的文件名，第二个参数是写入的字符串，第三个参数是回调函数。 <br><strong>参数 2</strong>：回调函数前面，还可以再加一个参数，表示写入字符串的编码（默认是 utf8）</p>
+</blockquote>
+<blockquote>
+<p>writeFileSync(): 用于同步写入文件<br><br><strong>参数 1</strong>：是文件路径，<br><strong>参数 2</strong>：是写入文件的字符串，第三个参数是文件编码，默认为 utf8</p>
+</blockquote>
+<blockquote>
+<p>mkdir(): 用于新建目录。<br><br><strong>参数 1</strong>：是目录名，<br><strong>参数 2</strong>：是权限值，<br><strong>参数 3</strong>：是回调函数。</p>
+</blockquote>
+<blockquote>
+<p>mkdirSync()，writeFileSync()，readFileSync()<br>这三个方法是建立目录、写入文件、读取文件的同步版本。<br><br><strong>代码示例</strong>：fs.mkdirSync(‘./helloDirSync’,0777);<br>fs.writeFileSync(‘./helloDirSync/message.txt’, ‘Hello Node’);<br>var data = fs.readFileSync(‘./helloDirSync/message.txt’,’UTF-8’);<br>console.log(‘file created with contents:’);<br>console.log(data);<br><br><br>对于流量较大的服务器，最好还是采用异步操作，因为同步操作时，只有前一个操作结束，才会开始后一个操作，如果某个操作特别耗时（常常发生在读写数据时），会导致整个程序停顿。</p>
+</blockquote>
+<h1 id="2"><a href="#2" class="headerlink" title="2"></a><code>2</code></h1><h1 id="Express"><a href="#Express" class="headerlink" title="Express"></a>Express</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是目前最流行的基于Node.js的Web开发框架，可以快速地搭建一个完整功能的网站。</span><br></pre></td></tr></table></figure>
+
+<p><strong>express</strong>使用过程:<br>先全局安装$ npm install express-generator -g,<br>再给项目起个名字 express books-app -e -e 表示使用 ejs 模板引擎<br>进入文件夹 cd 文件夹名 -&gt;安装依赖项 npm i -&gt;npm start-&gt;打开浏览<br>器输入 localhost:3000 即可弹出 Express 页面</p>
+<p><code>$ node index 启动脚本index.js的app.get方法，用于指定不同的访问路径所对应的回调函数，这叫做“路由”（routing）。上面代码只指定了根目录的回调函数，因此只有一个路由记录。实际应用中，可能有多个路由记录。</code></p>
+<blockquote>
+<p>router.get(“/“, function(req, res, next) {<br>使用一个模板页面显示内容数据<br>参数一 表示模板文件的路径<br>参数二 表示传递到页面的数据</p>
+</blockquote>
+<p><code>.editorconfig 帮助开发人员定义和维护跨编辑器（或IDE）的统一的代码风格.</code></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/nodeJs/">
+    <time datetime="2020-03-20T01:28:15.000Z" class="entry-date">
+        2020-03-20
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-跨域及搜索过程" class="post-跨域及搜索过程 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E6%90%9C%E7%B4%A2%E8%BF%87%E7%A8%8B/">跨域及搜索过程</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E6%90%9C%E7%B4%A2%E8%BF%87%E7%A8%8B/" data-id="ckafgsfxr000enktlao7p3rhf" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="一、跨域出现原因"><a href="#一、跨域出现原因" class="headerlink" title="一、跨域出现原因"></a>一、跨域出现原因</h3><ol>
+<li><p>浏览器限制跨域访问资源是一种安全策略，可以预防某些恶意行为。浏览器在每次发起请求时都会带上 cookie，试想下，如果没有这总安全策略，用户的数据就被泄露。跨域限制就是为了避免这种情况的发生。</p>
+<h3 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h3><ol>
+<li><p>jsonp 之所以能够实现跨域资源的访问，是因为 script 标签不受浏览器同源策略的限制，使用时将 src 属性指定一个跨域 URL，服务器在收到请求后，将数据放到指定的 onback 里传回来。</p>
+<div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">var</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> script<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'text/javascript'</span><span class="token punctuation">;</span> <span class="token comment">// 传参并指定回调执行函数为 onBack</span>script<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'http://www.....:8080/login?user=admin&amp;callback=onBack'</span><span class="token punctuation">;</span>document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">// 回调执行函数</span><span class="token keyword">function</span> <span class="token function">onBack</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token function">alert</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre></div>
+</li>
+<li><p>CORS（cross-origin-resource-sharing）跨域资源共享，其思想是使用自定义的 HTTP 头部，让浏览器与服务器进行沟通，从而决定请求或响应是成功还是失败。服务器端一般在 Access-Control-Allow-Origin 中指定对应的域，当浏览器访问对应的资源。主要是后端在请求头里面设置安全域名</p>
+</li>
+<li><p>document.domain + iframe 跨域 此方案仅限主域相同，子域不同的跨域应用场景 父窗口：(<a href="http://www.domain.com/a.html" target="_blank" rel="noopener">http://www.domain.com/a.html</a>) <div class="language-html extra-class"><pre class="language-html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>iframe<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span><a href="http://child.domain.com/b.html" target="_blank" rel="noopener">http://child.domain.com/b.html</a><span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span> > <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript"> document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span> > <span class="token keyword">var</span> user <span class="token operator">=</span> <span class="token string">'admin'</span><span class="token punctuation">;</span> > </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span> > </code></pre></div> 子窗口：(<a href="http://child.domain.com/b.html" target="_blank" rel="noopener">http://child.domain.com/b.html</a>) <div class="language-javascript extra-class"><pre class="language-javascript"><code>document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span> > <span class="token comment">// 获取父窗口中变量</span> > <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'get js data from parent ---&gt; '</span> <span class="token operator">+</span> window<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span> > </code></pre></div></p>
+</li>
+<li><p>nginx 代理跨域</p>
+</li>
+<li><p>nodejs 中间件代理跨域</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="二、在浏览器中输入网址到看到网页内容经历了哪些过程"><a href="#二、在浏览器中输入网址到看到网页内容经历了哪些过程" class="headerlink" title="二、在浏览器中输入网址到看到网页内容经历了哪些过程"></a>二、在浏览器中输入网址到看到网页内容经历了哪些过程</h3><ol>
+<li>浏览器获取这个网址之后，会先去缓存中看看有没有要访问的资源，从浏览器缓存-系统缓存-路由缓存中查看，如果有就不再进行 http 请求，直接从缓存中加载资源。否则进行步骤 2（缓存就是把之前访问过的 web 资源，例如 css、js、图片等资源保存在本机的内存或磁盘中）</li>
+<li>浏览器拿到域名自动去向 DNS(域名系统)服务器发起请求，查询用户输入的域名对应的 ip 地址 （域名的设定是为了方便人类记忆，而机器识别的是 ip 地址）</li>
+<li>浏览器拿到 ip 地址后，通过 ip 地址和端口号和服务器建立 tcp 连接。（建立 tcp 连接需要经过三次“握手”，是可靠连接，能确认数据最终是否送达到目标）</li>
+<li>三次“握手”建立连接成功之后，浏览器开始向服务器发起 http 请求，并通过 http 协议将请求信息包装成请求报文（包含请求行、请求头、空行、请求体），然后通过 socket 发送到服务器</li>
+<li>当服务器接收到客户端浏览器发送过来的请求报文时候，按照 HTTP 协议将请求报文解析出来</li>
+<li>然后服务器拿着请求报文中的请求信息（例如请求路径 url），做相应的业务逻辑处理操作</li>
+<li>当业务逻辑处理操作完成之后，服务器将发送给浏览器的数据按照 http 协议包装成响应报文（响应行、响应头、空行、响应体</li>
+<li>然后服务器将响应报文发送给浏览器</li>
+<li>浏览器接收到响应报文后，按照 HTTP 协议将响应报文解析出来</li>
+<li>浏览器拿到响应报文中响应体的数据开始渲染 html、css，执行 javaScript</li>
+<li>如果在解析的过程（从上到下）中，发现有外链的标签（link、css、img）浏览器会自动对该标签指向的 路径地址 发起新的请求，同上。</li>
+</ol>
+<h3 id="三、三次握手-建立连接协议"><a href="#三、三次握手-建立连接协议" class="headerlink" title="三、三次握手 建立连接协议"></a>三、三次握手 建立连接协议</h3><p>首先三次握手发生在：传输层，TCP 提供的是面向连接的、可靠的数据流传输，所以要建立三次握手！</p>
+<ol>
+<li><p>第一次 客户端发出请求, 服务器接收, 服务器就知道客户端通信是正常的</p>
+</li>
+<li><p>第二次服务器端发出请求 客户端知道其服务器端数据传输为正常（并且也知道自己的数据传输正常 因为可以确定第一次发的消息服务器已经接收到）</p>
+</li>
+<li><p>第三次客户端重新发送请求, 服务器端接收到客户端的请求从而判断自己的收发能力都是正常的, 因为第二次向服务器端发送的数据客户端已经准确收到, 这样经过三次握手之后客户端和服务器端都知道彼此数据传输正常, 从而建立通信。</p>
+</li>
+</ol>
+<h3 id="四、连接终止协议（四次握手）"><a href="#四、连接终止协议（四次握手）" class="headerlink" title="四、连接终止协议（四次握手）"></a>四、连接终止协议（四次握手）</h3><ol>
+<li><p>原理：由于 TCP 连接是全双工的，因此每个方向都必须单独进行关闭。这原则是当一方完成它的数据发送任务后就能发送一个 FIN 来终止这个方向的连接。收到一个 FIN 只意味着这一方向上没有数据流动，一个 TCP 连接在收到一个 FIN 后仍能发送数据。首先进行关闭的一方将执行主动关闭，而另一方执行被动关闭。</p>
+<ol>
+<li>第一次挥手：主动关闭方发送一个 FIN，用来关闭主动方到被动关闭方的数据传送，也就是主动关闭方告诉被动关闭方：我已经不会再给你发数据了(当然，在 fin 包之前发送出去的数据，如果没有收到对应的 ack 确认报文，主动关闭方依然会重发这些数据)，但是，此时主动关闭方还可以接受数据。</li>
+<li>第二次挥手：被动关闭方收到 FIN 包后，发送一个 ACK 给对方，确认序号为收到序号+1（与 SYN 相同，一个 FIN 占用一个序号， SYN 和 FIN 都有 seq 序号）。</li>
+<li>第三次挥手：被动关闭方发送一个 FIN，用来关闭被动关闭方到主动关闭方的数据传送，也就是告诉主动关闭方，我的数据也发送完了，不会再给你发数据了。</li>
+<li>第四次挥手：主动关闭方收到 FIN 后，发送一个 ACK 给被动关闭方，确认序号为收到序号+1，至此，完成四次挥手。</li>
+</ol>
+</li>
 </ol>
 
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/uniapp/">
-    <time datetime="2020-03-03T08:57:22.000Z" class="entry-date">
-        2020-03-03
+    <a href="/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E6%90%9C%E7%B4%A2%E8%BF%87%E7%A8%8B/">
+    <time datetime="2020-03-16T09:50:10.000Z" class="entry-date">
+        2020-03-16
     </time>
 </a>
     
@@ -420,7 +335,7 @@
   
     <nav id="pagination">
       <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &amp;raquo;</a>
       </nav>
     </nav>
   
@@ -446,23 +361,23 @@
       <ul>
         
           <li>
+            <a href="/react-Hooks/">react Hooks</a>
+          </li>
+        
+          <li>
+            <a href="/MVC%EF%BC%8CMVP-%E5%92%8C-MVVM/">MVC，MVP 和 MVVM</a>
+          </li>
+        
+          <li>
+            <a href="/rredux%E6%98%AF%E5%95%A5/">rredux是啥</a>
+          </li>
+        
+          <li>
             <a href="/react%E5%B0%8F%E7%BB%93/">react小结</a>
           </li>
         
           <li>
             <a href="/nodeJs/">nodeJs</a>
-          </li>
-        
-          <li>
-            <a href="/%E8%B7%A8%E5%9F%9F%E5%8F%8A%E6%90%9C%E7%B4%A2%E8%BF%87%E7%A8%8B/">跨域及搜索过程</a>
-          </li>
-        
-          <li>
-            <a href="/vue%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">vue常见问题</a>
-          </li>
-        
-          <li>
-            <a href="/js%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">js常见问题</a>
           </li>
         
       </ul>
